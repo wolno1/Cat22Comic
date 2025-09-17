@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cat22 Comic - Página oficial</title>
+  <style>
+    :root {
+      --maxw: 1200px;
+      --gap: 24px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      line-height: 1.45;
+      color: #111;
+      background: #fafafa;
+    }
+    .container {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    /* Cabecera: 2 columnas grandes */
+    .header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: var(--gap);
+      min-height: 40vh;
+    }
+    .header .logo img {
+      width: 100%;
+      max-width: 520px;
+      height: auto;
+      display: block;
+    }
+    .header .welcome {
+      font-size: clamp(1.25rem, 2.5vw + 1rem, 2.75rem);
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+
+    /* Fila con 4 "botones" en orden */
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(140px, 1fr));
+      gap: var(--gap);
+      margin-top: 24px;
+    }
+    .buttons a {
+      display: block;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,.06);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .buttons a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 26px rgba(0,0,0,.12);
+    }
+    .buttons img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* Barra fija inferior derecha: logos a la izquierda y BotR pegado a la esquina */
+    .sticky-bar {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      display: flex;
+      align-items: flex-end;
+      gap: 12px; /* espacio entre logos y BotR */
+      z-index: 999;
+    }
+    .socials {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 2px 10px rgba(0,0,0,.08);
+    }
+    .socials a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .socials img {
+      width: 28px;
+      height: 28px;
+      display: block;
+      filter: brightness(0) saturate(100%);
+    }
+    .botr img {
+      width: 108px;
+      height: auto;
+      display: block;
+    }
+
+    /* Responsivo */
+    @media (max-width: 900px) {
+      .header { grid-template-columns: 1fr; text-align: center; }
+      .header .logo img { margin: 0 auto; }
+      .buttons { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 520px) {
+      .socials { gap: 8px; padding: 8px 10px; }
+      .socials img { width: 24px; height: 24px; }
+      .botr img { width: 84px; } /* antes 68px */
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <!-- Fila 1: 2 columnas -->
+    <section class="header">
+      <div class="logo">
+        <img src="IMG/Logo.png" alt="Cat22 - Logo" />
+      </div>
+      <div class="welcome">
+        Blardy Blar, Something About Being Welcomed To The Official Cat22 Comic Website or what have you
+      </div>
+    </section>
+
+    <!-- Fila 2: 4 botones en orden -->
+    <nav class="buttons" aria-label="Navegación principal">
+      <a href="#" title="Comic">
+        <img src="IMG/Comic.png" alt="Comic" />
+      </a>
+      <a href="#" title="Chapters">
+        <img src="IMG/Chapters.png" alt="Chapters" />
+      </a>
+      <a href="#" title="Cast">
+        <img src="IMG/Cast.png" alt="Cast" />
+      </a>
+      <a href="#" title="What">
+        <img src="IMG/What.png" alt="What" />
+      </a>
+    </nav>
+  </main>
+
+  <!-- Barra fija inferior derecha -->
+  <div class="sticky-bar" aria-label="Redes y botón">
+    <div class="socials">
+      <a href="#" aria-label="X / Twitter">
+        <img src="SVG/X.svg" alt="X" />
+      </a>
+      <a href="#" aria-label="Bluesky">
+        <img src="SVG/BSKY.svg" alt="Bluesky" />
+      </a>
+      <a href="#" aria-label="DeviantArt">
+        <img src="SVG/DA.svg" alt="DeviantArt" />
+      </a>
+    </div>
+    <a class="botr" href="#" title="Botón inferior derecho">
+      <img src="IMG/BotR.png" alt="Botón inferior derecho" />
+    </a>
+  </div>
+</body>
+</html>
